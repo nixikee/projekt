@@ -1,0 +1,38 @@
+<mat-card class="card">
+    <form *ngIf="form" [formGroup]="form" class="center">
+      <h3>Update Agreement Specification</h3>
+          <br>
+          <mat-form-field class="max-width">
+            <mat-label>Name</mat-label>
+            <input value="{{form.value.name}}" matInput focus formControlName="name">
+          </mat-form-field>
+          <mat-form-field class="max-width">
+            <mat-label>Href</mat-label>
+            <input value="{{form.value.href}}" matInput formControlName="href">
+          </mat-form-field>
+          <mat-form-field class="max-width">
+            <mat-label>Bundle?</mat-label>
+            <input value="{{form.value.isBundle}}" matInput formControlName="isBundle">
+          </mat-form-field>
+          <mat-form-field class="max-width">
+            <mat-label>Last Update</mat-label>
+            <input value="{{form.value.lastUpdate}}" matInput formControlName="lastUpdate">
+          </mat-form-field>
+          <mat-form-field class="max-width">
+            <mat-label>Lifecycle Status</mat-label>
+            <input value="{{form.value.lifecycleStatus}}" matInput formControlName="lifecycleStatus">
+          </mat-form-field>
+          <mat-form-field class="max-width">
+            <mat-label>Description</mat-label>
+            <textarea value="{{form.value.description}}" matInput formControlName="description"></textarea>
+          </mat-form-field>
+          <mat-form-field class="max-width">
+            <mat-label>Version</mat-label>
+            <input value="{{form.value.version}}" matInput formControlName="version">
+          </mat-form-field>
+          <div>
+            <button mat-button (click)="dialogRef.close()">Cancel</button>
+            <button mat-raised-button color="primary" [mat-dialog-close]="form.value" [disabled]="form.invalid">Add</button>
+          </div>
+    </form>  
+  </mat-card>

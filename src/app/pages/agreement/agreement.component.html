@@ -1,0 +1,26 @@
+<mat-toolbar [style.backgroundColor]="'#030229'">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<app-container classes="container-1 flex">
+  <ng-container *ngIf="(agreements) | async as agreement; else loadingOrError">
+    <app-agreement-card class="container" *ngFor="let item of agreement" [agreement]="item" (getAgreement)="onGetAgreement($event)">
+    </app-agreement-card>
+    <br>
+  </ng-container>
+  <ng-template #loadingOrError>
+    <ng-container *ngIf="errorObject; else loading">
+      <span class="centering">
+        Valami hiba történt!
+      </span>
+    </ng-container>
+    <ng-template #loading>
+      <span class="centering">
+        <mat-spinner></mat-spinner>
+      </span>
+    </ng-template>
+  </ng-template>
+</app-container>
+<br>

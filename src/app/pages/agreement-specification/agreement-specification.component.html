@@ -1,0 +1,27 @@
+<mat-toolbar [style.backgroundColor]="'#030229'">
+    <mat-toolbar-row>
+      <span>{{title}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <app-container classes="container-1 flex">
+    <ng-container *ngIf="(agreementSpecifications) | async as agreementSpecification; else loadingOrError">
+      <app-agreement-specification-card class="container" *ngFor="let item of agreementSpecification" [agreementSpecification]="item" (getAgreementSpecification)="onGetAgreementSpecification($event)">
+      </app-agreement-specification-card>
+      <br>
+    </ng-container>
+    <ng-template #loadingOrError>
+      <ng-container *ngIf="errorObject; else loading">
+        <span class="centering">
+          Valami hiba történt!
+        </span>
+      </ng-container>
+      <ng-template #loading>
+        <span class="centering">
+          <mat-spinner></mat-spinner>
+        </span>
+      </ng-template>
+    </ng-template>
+  </app-container>
+  <br>
+  

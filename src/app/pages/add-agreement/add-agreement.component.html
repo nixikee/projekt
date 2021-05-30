@@ -1,0 +1,11 @@
+<mat-toolbar [style.backgroundColor]="'#030229'">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="nav">
+    <mat-card *ngFor="let item of adds" matRipple [matRippleColor]="item.color" (click)="openDialog(item.value)">
+      {{item.title}}
+    </mat-card>
+</div>

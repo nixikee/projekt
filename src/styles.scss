@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+html, 
+body { 
+    background-color: #09024d;
+    height: 100%; 
+}
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: stretch;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.card {
+    width: 100vw;
+    height: 75vh;
+}
+  
+@media (min-width: 760px) {
+    .card {
+      max-width: 40em;
+    }
+}
+
+.delete-card {
+    width: 25vw;
+    height: 10vh;
+}
+
+.container {
+    display: inline-block;
+    justify-content: space-evenly;
+    padding: 20px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.centering {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

@@ -1,0 +1,21 @@
+mat-toolbar {
+    background-color: #030229;
+    width: 100%;
+    margin: 0 auto;
+}
+
+[mat-button], a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-width: 10%;
+}
+
+[mat-button]:not(:last-child) {
+    margin-right: 16px;
+}
+
+.active {
+    border-bottom: white 1px solid;
+    border-radius: 0;
+  }

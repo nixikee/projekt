@@ -1,0 +1,55 @@
+<mat-card class="card">
+        <form *ngIf="form" [formGroup]="form" class="center">
+          <h3>Update Agreement</h3>
+              <br>
+              <mat-form-field class="max-width">
+                <mat-label>Name</mat-label>
+                <input type="text" value="{{form.value.name}}" matInput focus formControlName="name">
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Href</mat-label>
+                <input type="text" value="{{form.value.href}}" matInput formControlName="href">
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Agreement Period</mat-label>
+                <input type="number" value="{{form.value.agreementPeriod}}" matInput formControlName="agreementPeriod">
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Agreement Type</mat-label>
+                <input type="text" value="{{form.value.agreementType}}" matInput formControlName="agreementType">
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Completion Date</mat-label>
+                <input type="date" value="{{form.value.completionDate}}" matInput formControlName="completionDate">
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Description</mat-label>
+                <textarea value="{{form.value.description}}" matInput formControlName="description"></textarea>
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Document Number</mat-label>
+                <input type="text" value="{{form.value.documentNumber}}" matInput formControlName="documentNumber">
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Initial Date</mat-label>
+                <input type="datetime" value="{{form.value.initialDate}}" matInput formControlName="initialDate">
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Statement Of Intent</mat-label>
+                <input type="text" value="{{form.value.statementOfIntent}}" matInput formControlName="statementOfIntent">
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Status</mat-label>
+                <input type="text" value="{{form.value.status}}" matInput formControlName="status">
+              </mat-form-field>
+              <mat-form-field class="max-width">
+                <mat-label>Version</mat-label>
+                <input type="text" value="{{form.value.version}}" matInput formControlName="version">
+              </mat-form-field>
+              <div>
+                <button mat-button (click)="dialogRef.close()">Cancel</button>
+          <button mat-raised-button color="primary" [mat-dialog-close]="form.value" [disabled]="form.invalid">Update</button>
+              </div>
+        </form>
+</mat-card>
+  

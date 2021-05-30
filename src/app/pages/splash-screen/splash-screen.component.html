@@ -1,0 +1,7 @@
+<h1>Agreement Management API</h1>
+
+<div class="splash-nav">
+    <mat-card *ngFor="let item of navs" matRipple [matRippleColor]="item.color" [routerLink]="[ item.url ]">
+      {{item.title}}
+    </mat-card>
+</div>

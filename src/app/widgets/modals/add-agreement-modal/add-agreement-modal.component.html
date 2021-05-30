@@ -1,0 +1,54 @@
+<mat-card class="card">
+  <form *ngIf="form" [formGroup]="form" class="center">
+    <h3>New Agreement</h3>
+        <br>
+        <mat-form-field class="max-width">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput focus formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Href</mat-label>
+          <input type="text" matInput formControlName="href">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Agreement Period</mat-label>
+          <input type="number" placeholder="0" matInput formControlName="agreementPeriod">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Agreement Type</mat-label>
+          <input type="text" matInput formControlName="agreementType">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Completion Date</mat-label>
+          <input type="date" matInput formControlName="completionDate">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Document Number</mat-label>
+          <input type="text" matInput formControlName="documentNumber">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Initial Date</mat-label>
+          <input type="datetime" matInput formControlName="initialDate">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Statement Of Intent</mat-label>
+          <input type="text" matInput formControlName="statementOfIntent">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Status</mat-label>
+          <input type="text" matInput formControlName="status">
+        </mat-form-field>
+        <mat-form-field class="max-width">
+          <mat-label>Version</mat-label>
+          <input type="text" matInput formControlName="version">
+        </mat-form-field>
+        <div>
+          <button mat-button (click)="dialogRef.close()">Cancel</button>
+          <button mat-raised-button color="primary" [mat-dialog-close]="form.value" [disabled]="form.invalid">Add</button>
+        </div>
+  </form>  
+</mat-card>

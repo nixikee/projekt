@@ -1,0 +1,18 @@
+<mat-card *ngIf="agreementSpecification">
+    <mat-card-header>
+      <mat-card-title *ngIf="agreementSpecification.name">{{agreementSpecification.name}}</mat-card-title>
+      <mat-card-subtitle *ngIf="agreementSpecification.href">{{agreementSpecification.href}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngIf="agreementSpecification.isBundle">Bundle: {{agreementSpecification.isBundle}}</p>
+      <p *ngIf="agreementSpecification.lastUpdate">Last Update: {{agreementSpecification.lastUpdate}}</p>
+      <p *ngIf="agreementSpecification.description">Description: {{agreementSpecification.description}}</p>
+      <p *ngIf="agreementSpecification.lifecycleStatus">Lifecycle Status: {{agreementSpecification.lifecycleStatus}}</p>
+      <p *ngIf="agreementSpecification.serviceCategory">Service Category: {{agreementSpecification.serviceCategory}}</p>
+      <p *ngIf="agreementSpecification.version">Version: {{agreementSpecification.version}}</p>
+      <p *ngIf="agreementSpecification.validFor">Valid For: {{agreementSpecification.validFor}}</p>
+      <button (click)="openDialog(agreementSpecification.id)">Update</button>
+      <button (click)="onDelete(agreementSpecification)">Delete</button>
+    </mat-card-content>
+    
+</mat-card>
